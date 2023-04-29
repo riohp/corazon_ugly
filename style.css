@@ -1,0 +1,65 @@
+body{
+    margin:0;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart{
+    height: 70px;
+    width: 70px;
+    background-color: cyan;
+    position: relative;
+    box-shadow: 10px 0px 100px 10px rgb(185, 14, 236);
+    animation: animHeart .6s linear infinite;
+}
+@keyframes animHeart{
+    0%{
+        transform: rotate(-45deg)scale(1.07);
+    }
+        80%{
+            transform: rotate(-45deg)scale(1);
+        }
+        100%{
+                transform: rotate(-45deg)scale(.8);
+        }
+}
+.heart::before{
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-color: cyan;
+    box-shadow: -10px 10px 90px cyan;
+    top: -50%;
+    border-radius: 50%;
+}
+.heart::after{
+    content: '';
+    position: absolute;
+    box-shadow: 10px -10px 90px cyan;
+    height: 70px;
+    width: 70px;
+    background-color: cyan;
+    right: -50%;
+    border-radius: 50%;
+}    
+
+.ugly{
+    bottom: -3em;
+    position: relative;
+    right: 6px;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    color: aliceblue;
+}
+
+.ugly:hover{
+    color: rgb(14, 203, 236);
+    text-decoration: none;
+    visibility: visible;
+    cursor: pointer;
+}
